@@ -28,7 +28,13 @@ FROM nginx:alpine
 # Copy the build files to the Nginx server
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose the port
+# Remove default nginx index page
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose the port (Railway.app handles port binding, so EXPOSE is optional)
 EXPOSE 80
 
 # Start the Nginx server
