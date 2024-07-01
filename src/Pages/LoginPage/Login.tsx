@@ -48,7 +48,7 @@
 
     const handleLogin = async () => {
       try {
-        const response = await axios.post("http://localhost:8080/api/admins/authenticate", {
+        const response = await axios.post("https://proactive-elegance-production.up.railway.app/api/admins/authenticate", {
           email,
           password,
         });

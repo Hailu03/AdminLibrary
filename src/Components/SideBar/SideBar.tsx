@@ -53,7 +53,7 @@ const SideBar: React.FC = () => {
             formData.append('adminID', user.id);
 
             // Send the image to the server
-            const response = await axios.post("http://localhost:8080/api/admins/upload-image", formData, {
+            const response = await axios.post("https://proactive-elegance-production.up.railway.app/api/admins/upload-image", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',  
                 },
